@@ -38,12 +38,14 @@ registerBlockType('ctc-social-sharing/social-sharing-block', {
             type: 'string',
             default: ''
         },
+        clntId: { type: 'String', default: '' },
     },
 
 
     edit: props => {
         const postPermaLink = useSelect(select => select("core/editor").getPermalink());
         props.setAttributes({ postPermalink: postPermaLink })
+        props.setAttributes({ clntId: props.clientId });
 
         return ssEl('div', null, ssEl('section', { className: "sbgSocialbarMain" },
             ssEl('ol', { className: 'sbgSocialbarChGrid' },
@@ -69,10 +71,10 @@ registerBlockType('ctc-social-sharing/social-sharing-block', {
                                 name: x.name,
                                 label: x.name,
                                 checked: x.checked,
-                                id: `${x.name}-sbg`,
+                                id: `${x.name}-sbg-${props.attributes.clntId}`,
                                 onChange: checked => {
-                                    props.setAttributes({ socialOptions: props.attributes.socialOptionsInput.filter(x => true === document.querySelector(`#${x.name}-sbg`).checked) });
-                                    props.setAttributes({ socialOptionsInput: props.attributes.socialOptionsInput.map(x => { return { name: x.name, href: x.href, checked: document.querySelector(`#${x.name}-sbg`).checked } }) });
+                                    props.setAttributes({ socialOptions: props.attributes.socialOptionsInput.filter(x => true === document.querySelector(`#${x.name}-sbg-${props.attributes.clntId}`).checked) });
+                                    props.setAttributes({ socialOptionsInput: props.attributes.socialOptionsInput.map(x => { return { name: x.name, href: x.href, checked: document.querySelector(`#${x.name}-sbg-${props.attributes.clntId}`).checked } }) });
                                 },
                             }),
                         ))),

@@ -40,7 +40,7 @@ wp_register_script(
  );
 
 register_block_type(
-   'social-bar/socialbar-block',
+   'ctc-social-sharing/social-sharing-block',
    array(
 	  'style'         => 'socialbar-block-front-end-styles',
 	  'editor_style'  => 'socialbar-block-editor-styles',
