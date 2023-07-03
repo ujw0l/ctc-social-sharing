@@ -1,52 +1,41 @@
 <?php
-/*
-Plugin Name: CTC Social Sharing
-Plugin URI:
-Description: Gutenberg block to  add post sharing in social diffrent social sites
-Version: 1.0.0
-Author: Ujwol Bastakoti
-Author URI:ujw0l.github.io
-text_domain :ctc-social-sharing
-License: GPLv2
-*/
-
+/**
+ * Plugin Name:       CTC Social Sharing
+ * Description:       Gutenberg block to display post sharing options on socail media
+ * Requires at least: 6.1
+ * Requires PHP:      7.0
+ * Version:           2.0.0
+ * Author:            The WordPress Contributors
+ * License:           GPL-2.0-or-later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       ctc-social-sharing
+ *
+ * @package           create-block
+ */
 
 /**
- * Resiter gutenberg block
+ * Registers the block using the metadata loaded from the `block.json` file.
+ * Behind the scenes, it registers also all assets so they can be enqueued
+ * through the block editor in the corresponding context.
+ *
+ * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-add_action( 'init',  function (){
+function create_block_ctc_social_sharing_block_init() {
 
 
-	// Block Editor Script.
-wp_register_script(
-   'socialbar-block-editor',
-   plugins_url( 'js/socialbar-block.js',__FILE__ ),
-   array( 'wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-i18n','wp-data' ),
+	// Block front end styles.
+	wp_register_style(
+		'socialbar-block-front-end-styles',
+		plugins_url( 'build/index.css',__FILE__ ),
+		array('dashicons')
+	 );
+
+
+
+	register_block_type( __DIR__ . '/build',
+array(
+	'style'         => 'socialbar-block-front-end-styles',
+)
 );
-
- // Block front end styles.
- wp_register_style(
-	'socialbar-block-front-end-styles',
-	plugins_url( 'css/style.css',__FILE__ ),
-	array('dashicons')
-
- );
-
- // Block editor styles.
- wp_register_style(
-	'socialbar-block-editor-styles',
-	plugins_url( 'css/editor-style.css',__FILE__ ),
-	array( 'wp-edit-blocks','dashicons' ),
- );
-
-register_block_type(
-   'ctc-social-sharing/social-sharing-block',
-   array(
-	  'style'         => 'socialbar-block-front-end-styles',
-	  'editor_style'  => 'socialbar-block-editor-styles',
-	  'editor_script' => 'socialbar-block-editor',
-   )
-);
-
 }
- );
+add_action( 'init', 'create_block_ctc_social_sharing_block_init' );
