@@ -2,9 +2,9 @@
 Contributors: UjW0L
 Tags: block,social-sharing,share
 Requires at least: 5.7.2
-Tested up to: 5.7.2
+Tested up to: 6.2.2
 Requires PHP: 7.4.9
-Stable tag: 1.0.0
+Stable tag: 2.0.0
 License: GPL V2
 
 Gutenberg block to display post sharing options on socail media
@@ -35,3 +35,8 @@ e.g.
 
 =1.0.0=
 *First Stable version
+
+=2.0.0=
+*JSX Support
+*Whatsapp added
+

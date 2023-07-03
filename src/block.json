@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ctc-social-sharing/ctc-social-sharing",
+	"version": "2.0.0",
+	"title": "CTC Social Sharing",
+	"category": "widgets",
+	"icon": "share",
+	"description": "Social sharing block",
+	"example" :{},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "ctc-social-sharing",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
