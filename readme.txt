@@ -2,7 +2,7 @@
 Contributors: UjW0L
 Tags: block,social-sharing,share
 Requires at least: 5.7.2
-Tested up to: 6.2.2
+Tested up to: 6.4.1
 Requires PHP: 7.4.9
 Stable tag: 2.0.0
 License: GPL V2

@@ -1,1 +1,613 @@
-(()=>{"use strict";var e,a={582:()=>{const e=window.wp.blocks,a=window.wp.i18n,t=window.wp.element,c=window.wp.data,n=window.React,r=window.wp.components,i=window.wp.blockEditor,o=JSON.parse('{"u2":"ctc-social-sharing/ctc-social-sharing"}');(0,e.registerBlockType)(o.u2,{keywords:[(0,a.__)("Social Bar","ctc-social-sharing"),(0,a.__)("Social Sharing","ctc-social-sharing")],attributes:{socialOptions:{type:"array",default:[{name:"Facebook",href:"https://www.facebook.com/sharer/sharer.php?u="},{name:"Twitter",href:"http://twitter.com/share?url="},{name:"Linkedin",href:"http://www.linkedin.com/cws/share?url="},{name:"Pinterest",href:"http://pinterest.com/pin/create/link/?url="},{name:"Reddit",href:"http://www.reddit.com/submit?url="},{name:"Whatsapp",href:"https://api.whatsapp.com/send?text="}]},socialOptionsInput:{type:"array",default:[{name:"Facebook",href:"https://www.facebook.com/sharer/sharer.php?u=",checked:!0,icon:"dashicons-facebook-alt"},{name:"Twitter",href:"http://twitter.com/share?url=",checked:!0,icon:"dashicons-twitter"},{name:"Linkedin",href:"http://www.linkedin.com/cws/share?url=",checked:!0,icon:"dashicons-linkedin"},{name:"Pinterest",href:"http://pinterest.com/pin/create/link/?url=",checked:!0,icon:"dashicons-pinterest"},{name:"Reddit",href:"http://www.reddit.com/submit?url=",checked:!0,icon:"dashicons-reddit"},{name:"Whatsapp",href:"https://api.whatsapp.com/send?text=",checked:!0,icon:"dashicons-whatsapp"}]},postPermalink:{type:"string",default:""},clntId:{type:"String",default:""}},edit:function({clientId:e,attributes:o,setAttributes:s}){(0,n.useEffect)((()=>{}));const l=(0,c.useSelect)((e=>e("core/editor").getPermalink()));return s({postPermalink:l}),s({clntId:e}),(0,t.createElement)("div",{...(0,i.useBlockProps)()},(0,t.createElement)("section",{className:"sbgSocialbarMain"},(0,t.createElement)("ol",{className:"sbgSocialbarChGrid"},o.socialOptions.map(((e,c)=>(0,t.createElement)("li",{key:c},(0,t.createElement)("div",{className:"sbgSocialbarChItem"},(0,t.createElement)("div",{className:`sbgSocialbarChInfo sbgSocialbarChInfo${e.name}`},(0,t.createElement)("div",{className:`sbgSocialbarChInfoFront sbgSocialbarCh${e.name}`}),(0,t.createElement)("div",{clasName:`sbgSocialbarChInfoBack sbgSocialbarChInfoBack${e.name}`}),(0,t.createElement)("p",{className:"sbgSocialbarTooltipP",id:`sbgSocialbar${e.name}Tooltip`},(0,t.createElement)("a",{className:`sbgSocialbar${e.name}Tooltip`,href:`${e.href}${o.postPermalink}`,target:"_blank",title:`${(0,a.__)("Share this page on","ctc-social-sharing")} ${e.name}`}))))))))),(0,t.createElement)("div",null,(0,t.createElement)(i.InspectorControls,null,(0,t.createElement)(r.PanelBody,null,(0,t.createElement)("p",null,(0,a.__)("Choose Social Icons","ctc-social-sharing")),(0,t.createElement)("ol",null,o.socialOptionsInput.map(((e,a)=>(0,t.createElement)(t.Fragment,null,(0,t.createElement)("li",{className:`ctcSsEditLi dashicons-before ${e.icon}`,title:e.name}," ",(0,t.createElement)(r.CheckboxControl,{key:a,name:e.name,checked:e.checked,id:`${e.name}-sbg-${o.clntId}`,onChange:()=>{s({socialOptions:o.socialOptionsInput.filter((e=>!0===document.querySelector(`#${e.name}-sbg-${o.clntId}`).checked))}),s({socialOptionsInput:o.socialOptionsInput.map((e=>({icon:e.icon,name:e.name,href:e.href,checked:document.querySelector(`#${e.name}-sbg-${o.clntId}`).checked})))})}}))))))),(0,t.createElement)(r.PanelBody,null))))},save:function({attributes:e}){return(0,t.createElement)("div",{...i.useBlockProps.save()},(0,t.createElement)("section",{className:"sbgSocialbarMain"},(0,t.createElement)("ol",{className:"sbgSocialbarChGrid"},e.socialOptions.map(((c,n)=>(0,t.createElement)("li",{key:n},(0,t.createElement)("div",{className:"sbgSocialbarChItem"},(0,t.createElement)("div",{className:`sbgSocialbarChInfo sbgSocialbarChInfo${c.name}`},(0,t.createElement)("div",{className:`sbgSocialbarChInfoFront sbgSocialbarCh${c.name}`}),(0,t.createElement)("div",{clasName:`sbgSocialbarChInfoBack sbgSocialbarChInfoBack${c.name}`}),(0,t.createElement)("p",{className:"sbgSocialbarTooltipP",id:`sbgSocialbar${c.name}Tooltip`},(0,t.createElement)("a",{className:`sbgSocialbar${c.name}Tooltip`,href:`${c.href}${e.postPermalink}`,target:"_blank",rel:"noopener",title:`${(0,a.__)("Share this page on","ctc-social-sharing")} ${c.name}`}))))))))))}})}},t={};function c(e){var n=t[e];if(void 0!==n)return n.exports;var r=t[e]={exports:{}};return a[e](r,r.exports,c),r.exports}c.m=a,e=[],c.O=(a,t,n,r)=>{if(!t){var i=1/0;for(m=0;m<e.length;m++){for(var[t,n,r]=e[m],o=!0,s=0;s<t.length;s++)(!1&r||i>=r)&&Object.keys(c.O).every((e=>c.O[e](t[s])))?t.splice(s--,1):(o=!1,r<i&&(i=r));if(o){e.splice(m--,1);var l=n();void 0!==l&&(a=l)}}return a}r=r||0;for(var m=e.length;m>0&&e[m-1][2]>r;m--)e[m]=e[m-1];e[m]=[t,n,r]},c.o=(e,a)=>Object.prototype.hasOwnProperty.call(e,a),(()=>{var e={826:0,431:0};c.O.j=a=>0===e[a];var a=(a,t)=>{var n,r,[i,o,s]=t,l=0;if(i.some((a=>0!==e[a]))){for(n in o)c.o(o,n)&&(c.m[n]=o[n]);if(s)var m=s(c)}for(a&&a(t);l<i.length;l++)r=i[l],c.o(e,r)&&e[r]&&e[r][0](),e[r]=0;return c.O(m)},t=globalThis.webpackChunkctc_social_sharing=globalThis.webpackChunkctc_social_sharing||[];t.forEach(a.bind(null,0)),t.push=a.bind(null,t.push.bind(t))})();var n=c.O(void 0,[431],(()=>c(582)));n=c.O(n)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/edit.js":
+/*!*********************!*\
+  !*** ./src/edit.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Edit)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
+
+
+
+
+
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
+ */
+
+
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+
+
+/**
+ * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
+ * Those files can contain any CSS code that gets applied to the editor.
+ *
+ * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
+ */
+
+
+/**
+ * The edit function describes the structure of your block in the context of the
+ * editor. This represents what the editor will render when the block is used.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
+ *
+ * @return {WPElement} Element to render.
+ */
+function Edit({
+  clientId,
+  attributes,
+  setAttributes
+}) {
+  (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => {});
+  const postPermaLink = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_1__.useSelect)(select => select("core/editor").getPermalink());
+  setAttributes({
+    postPermalink: postPermaLink
+  });
+  setAttributes({
+    clntId: clientId
+  });
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__.useBlockProps)()
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
+    className: "sbgSocialbarMain"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ol", {
+    className: "sbgSocialbarChGrid"
+  }, attributes.socialOptions.map((x, i) => {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
+      key: i
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "sbgSocialbarChItem"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: `sbgSocialbarChInfo sbgSocialbarChInfo${x.name}`
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: `sbgSocialbarChInfoFront sbgSocialbarCh${x.name}`
+    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      clasName: `sbgSocialbarChInfoBack sbgSocialbarChInfoBack${x.name}`
+    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: `sbgSocialbarTooltipP`,
+      id: `sbgSocialbar${x.name}Tooltip`
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+      className: `sbgSocialbar${x.name}Tooltip`,
+      href: `${x.href}${attributes.postPermalink}`,
+      target: "_blank",
+      title: `${(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Share this page on', 'ctc-social-sharing')} ${x.name}`
+    })))));
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Choose Social Icons', 'ctc-social-sharing')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ol", null, attributes.socialOptionsInput.map((x, i) => {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
+      className: `ctcSsEditLi dashicons-before ${x.icon}`,
+      title: x.name
+    }, " ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.CheckboxControl, {
+      key: i,
+      name: x.name,
+      checked: x.checked,
+      id: `${x.name}-sbg-${attributes.clntId}`,
+      onChange: () => {
+        setAttributes({
+          socialOptions: attributes.socialOptionsInput.filter(x => true === document.querySelector(`#${x.name}-sbg-${attributes.clntId}`).checked)
+        });
+        setAttributes({
+          socialOptionsInput: attributes.socialOptionsInput.map(x => {
+            return {
+              icon: x.icon,
+              name: x.name,
+              href: x.href,
+              checked: document.querySelector(`#${x.name}-sbg-${attributes.clntId}`).checked
+            };
+          })
+        });
+      }
+    })));
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.CheckboxControl, null)))));
+}
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit */ "./src/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./save */ "./src/save.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block.json */ "./src/block.json");
+/**
+ * Registers a new block provided a unique name and an object defining its behavior.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
+ */
+
+
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
+ */
+
+
+/**
+ * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
+ * All files containing `style` keyword are bundled together. The code used
+ * gets applied both to the front of your site and to the editor.
+ *
+ * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
+ */
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+
+/**
+ * Every block starts by registering a new block type definition.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
+ */
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_5__.name, {
+  keywords: [(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Social Bar', 'ctc-social-sharing'), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Social Sharing', 'ctc-social-sharing')],
+  attributes: {
+    socialOptions: {
+      type: 'array',
+      default: [{
+        name: 'Facebook',
+        href: 'https://www.facebook.com/sharer/sharer.php?u='
+      }, {
+        name: "Twitter",
+        href: 'http://twitter.com/share?url='
+      }, {
+        name: 'Linkedin',
+        href: 'http://www.linkedin.com/cws/share?url='
+      }, {
+        name: "Pinterest",
+        href: "http://pinterest.com/pin/create/link/?url="
+      }, {
+        name: "Reddit",
+        href: "http://www.reddit.com/submit?url="
+      }, {
+        name: "Whatsapp",
+        href: "https://api.whatsapp.com/send?text="
+      }]
+    },
+    socialOptionsInput: {
+      type: 'array',
+      default: [{
+        name: 'Facebook',
+        href: 'https://www.facebook.com/sharer/sharer.php?u=',
+        checked: true,
+        icon: 'dashicons-facebook-alt'
+      }, {
+        name: "Twitter",
+        href: 'http://twitter.com/share?url=',
+        checked: true,
+        icon: 'dashicons-twitter'
+      }, {
+        name: 'Linkedin',
+        href: 'http://www.linkedin.com/cws/share?url=',
+        checked: true,
+        icon: 'dashicons-linkedin'
+      }, {
+        name: "Pinterest",
+        href: "http://pinterest.com/pin/create/link/?url=",
+        checked: true,
+        icon: 'dashicons-pinterest'
+      }, {
+        name: "Reddit",
+        href: "http://www.reddit.com/submit?url=",
+        checked: true,
+        icon: 'dashicons-reddit'
+      }, {
+        name: "Whatsapp",
+        href: "https://api.whatsapp.com/send?text=",
+        checked: true,
+        icon: 'dashicons-whatsapp'
+      }]
+    },
+    postPermalink: {
+      type: 'string',
+      default: ''
+    },
+    clntId: {
+      type: 'String',
+      default: ''
+    },
+    alignment: {
+      type: 'string',
+      default: 'none'
+    }
+  },
+  /**
+   * @see ./edit.js
+   */
+  edit: _edit__WEBPACK_IMPORTED_MODULE_3__["default"],
+  /**
+   * @see ./save.js
+   */
+  save: _save__WEBPACK_IMPORTED_MODULE_4__["default"]
+});
+
+/***/ }),
+
+/***/ "./src/save.js":
+/*!*********************!*\
+  !*** ./src/save.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ save)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+
+
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
+ */
+
+
+/**
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
+ *
+ * @return {WPElement} Element to render.
+ */
+function save({
+  attributes
+}) {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
+    className: "sbgSocialbarMain"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ol", {
+    className: 'sbgSocialbarChGrid'
+  }, attributes.socialOptions.map((x, i) => {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
+      key: i
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: 'sbgSocialbarChItem'
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: `sbgSocialbarChInfo sbgSocialbarChInfo${x.name}`
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: `sbgSocialbarChInfoFront sbgSocialbarCh${x.name}`
+    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      clasName: `sbgSocialbarChInfoBack sbgSocialbarChInfoBack${x.name}`
+    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: `sbgSocialbarTooltipP`,
+      id: `sbgSocialbar${x.name}Tooltip`
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+      className: `sbgSocialbar${x.name}Tooltip`,
+      href: `${x.href}${attributes.postPermalink}`,
+      target: "_blank",
+      rel: "noopener",
+      title: `${(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Share this page on', 'ctc-social-sharing')} ${x.name}`
+    })))));
+  }))));
+}
+
+/***/ }),
+
+/***/ "./src/editor.scss":
+/*!*************************!*\
+  !*** ./src/editor.scss ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/style.scss":
+/*!************************!*\
+  !*** ./src/style.scss ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+/***/ ((module) => {
+
+module.exports = window["React"];
+
+/***/ }),
+
+/***/ "@wordpress/block-editor":
+/*!*************************************!*\
+  !*** external ["wp","blockEditor"] ***!
+  \*************************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["blockEditor"];
+
+/***/ }),
+
+/***/ "@wordpress/blocks":
+/*!********************************!*\
+  !*** external ["wp","blocks"] ***!
+  \********************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["blocks"];
+
+/***/ }),
+
+/***/ "@wordpress/components":
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["components"];
+
+/***/ }),
+
+/***/ "@wordpress/data":
+/*!******************************!*\
+  !*** external ["wp","data"] ***!
+  \******************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["data"];
+
+/***/ }),
+
+/***/ "@wordpress/element":
+/*!*********************************!*\
+  !*** external ["wp","element"] ***!
+  \*********************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["element"];
+
+/***/ }),
+
+/***/ "@wordpress/i18n":
+/*!******************************!*\
+  !*** external ["wp","i18n"] ***!
+  \******************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["i18n"];
+
+/***/ }),
+
+/***/ "./src/block.json":
+/*!************************!*\
+  !*** ./src/block.json ***!
+  \************************/
+/***/ ((module) => {
+
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"ctc-social-sharing/ctc-social-sharing","version":"2.0.0","title":"CTC Social Sharing","category":"widgets","icon":"share","description":"Social sharing block","example":{},"supports":{"html":false},"textdomain":"ctc-social-sharing","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"index": 0,
+/******/ 			"./style-index": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = globalThis["webpackChunkctc_social_sharing"] = globalThis["webpackChunkctc_social_sharing"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["./style-index"], () => (__webpack_require__("./src/index.js")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
+//# sourceMappingURL=index.js.map

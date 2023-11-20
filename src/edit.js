@@ -123,6 +123,8 @@ export default function Edit({clientId,attributes,setAttributes}) {
 
 				  <PanelBody>
 
+					<CheckboxControl />
+
 
 				  </PanelBody>
 				</InspectorControls>

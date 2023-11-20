@@ -66,6 +66,10 @@ registerBlockType( metadata.name, {
             default: ''
         },
         clntId: { type: 'String', default: '' },
+        alignment: {
+            type: 'string',
+            default: 'none',
+        },
     },
 
 
